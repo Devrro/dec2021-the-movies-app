@@ -1,0 +1,21 @@
+.header{
+  margin:20px 0 0 30px;
+}
+
+.header_list>li>a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgba(255, 250, 250, 0.9);
+  user-select: none;
+  cursor: pointer;
+}
+
+.header_list>li {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.header>div>h6{
+  font-size: 10px;
+  color: rgba(255,255,255,30%);
+}
