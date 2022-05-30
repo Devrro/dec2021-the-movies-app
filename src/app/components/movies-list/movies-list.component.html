@@ -1,1 +1,6 @@
-<p>movies-list works!</p>
+<div>
+  <app-movies-list-card *ngFor="let movie of movies" [movie]="movie"></app-movies-list-card>
+</div>
+<div class="popular_movies">
+  <router-outlet></router-outlet>
+</div>

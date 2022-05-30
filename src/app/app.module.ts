@@ -12,8 +12,7 @@ import { MovieInfoComponent } from './components/movie-info/movie-info.component
 import { GenreBadgeComponent } from './components/genre-badge/genre-badge.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { MoviesPageComponent } from './layouts/movies-page/movies-page.component';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
+import { MoviesOptionsComponent } from './components/movies-options/movies-options.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +26,12 @@ import { LoginComponent } from './components/login/login.component';
     GenreBadgeComponent,
     UserInfoComponent,
     MoviesPageComponent,
-    RegisterComponent,
-    LoginComponent
+    MoviesOptionsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [
   ],

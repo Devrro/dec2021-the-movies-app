@@ -1,7 +1,21 @@
+
+
 .main_page_container{
   display: flex;
 }
 
 .header{
   background: #eac88f;
+}
+
+.moviesBar{
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  background: grey;
+}
+
+.moviesPage{
+  width: 100%;
+  background: white;
 }

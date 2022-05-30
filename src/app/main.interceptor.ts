@@ -16,15 +16,14 @@ export class MainInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log(this.token);
-    const requestAPI = this.addToken(request, this.token)
-    console.log(requestAPI);
-    return next.handle(requestAPI);
+    request = this.addToken(request, this.token)
+    console.log(request);
+    return next.handle(request);
   }
 
   addToken(request: HttpRequest<any>, token: string): HttpRequest<any> {
     return request.clone({
-      setHeaders: {Authorization: `Bearer ${token}`}
+      setHeaders: {Authorization: `Bearer ${token}`},
     })
   }
 }

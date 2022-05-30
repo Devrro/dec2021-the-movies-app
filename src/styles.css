@@ -66,12 +66,23 @@ body{
   margin: 20px;
   background: rgba(255,255,255,10%);
   border-radius: 20px;
-  padding: 20px;
+  /*padding: 20px;*/
   backdrop-filter: blur(5px);
   width: 80%;
   display: flex;
   box-shadow: inset 1px 1px 1px 1px rgba(255,255,255,10%) ,1px 1px 10px 10px rgba(0,0,0,10%);
   transition: 0.5s ease-in;
-  height: 80vh;
+  height: 90vh;
+  overflow: hidden;
+  overflow-scrolling: touch;
+}
+.popular_movies_page{
+  width: 100%;
+  background: white;
+  border-radius: 0 20px 20px 0;
+}
 
+.moviesPage{
+  width: 100%;
+  background: white;
 }
