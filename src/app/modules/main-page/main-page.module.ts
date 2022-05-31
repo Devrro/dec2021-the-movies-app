@@ -13,6 +13,7 @@ import {MainInterceptor} from "../../main.interceptor";
     CommonModule,
     MainPageRoutingModule,
     HttpClientModule,
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -13,6 +13,7 @@ import { GenreBadgeComponent } from './components/genre-badge/genre-badge.compon
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { MoviesPageComponent } from './layouts/movies-page/movies-page.component';
 import { MoviesOptionsComponent } from './components/movies-options/movies-options.component';
+import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MoviesOptionsComponent } from './components/movies-options/movies-optio
     UserInfoComponent,
     MoviesPageComponent,
     MoviesOptionsComponent,
+    HorizontalScrollDirective,
   ],
   imports: [
     BrowserModule,

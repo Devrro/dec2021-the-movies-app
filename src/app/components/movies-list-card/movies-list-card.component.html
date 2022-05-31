@@ -1,6 +1,4 @@
-<div>
+<div (click)="getDetails(movie.id)"  class="movieCard" >
+  <app-poster-preview [image]=movie.poster_path></app-poster-preview>
   {{movie.original_title}}
-  <app-poster-preview></app-poster-preview>
-  <app-movie-info></app-movie-info>
 </div>
-<hr>

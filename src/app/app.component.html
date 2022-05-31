@@ -1,20 +1,2 @@
-<div class="header">
-  <router-outlet name="user-outlet"></router-outlet>
-  <div><H6>MEDIA</H6></div>
-  <ul class="header_list">
-    <li><a [routerLink]="['movies']">Movies</a></li>
-    <li><a [routerLink]="['tv-shows']">TV Shows</a></li>
-    <li><a [routerLink]="['music']">Music</a></li>
-    <li><a [routerLink]="['audiobooks']">Audiobooks</a></li>
-    <li><a [routerLink]="['games']">Games</a></li>
-    <li><a [routerLink]="['apps']">Apps</a></li>
-    <li><a [routerLink]="['updates']">Updates</a></li>
-  </ul>
-  <div><H6>ACCOUNT</H6></div>
-  <ul class="header_list">
-    <li><a [routerLink]="['library']">Library</a></li>
-    <li><a [routerLink]="['wishlist']">Wishlist</a></li>
-    <li><a [routerLink]="['settings']">Settings</a></li>
-  </ul>
-</div>
+<app-header></app-header>
 <router-outlet></router-outlet>

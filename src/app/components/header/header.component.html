@@ -1,10 +1,19 @@
-<div>
-  <a [routerLink]="['movies']">Movies</a>
-  <a [routerLink]="['tv-shows']">TV Shows</a>
-  <a [routerLink]="['music']">Music</a>
-  <a [routerLink]="['audiobooks']">Audiobooks</a>
-  <a [routerLink]="['games']">Games</a>
-  <a [routerLink]="['apps']">Apps</a>
-  <a [routerLink]="['upd']">Updates</a>
+<div class="header">
+  <router-outlet name="user-outlet"></router-outlet>
+  <div><H6>MEDIA</H6></div>
+  <ul class="header_list">
+    <li><a [routerLink]="['movies']" [queryParams]="{page:1}">Movies</a></li>
+    <li><a [routerLink]="['tv-shows']">TV Shows</a></li>
+    <li><a [routerLink]="['music']">Music</a></li>
+    <li><a [routerLink]="['audiobooks']">Audiobooks</a></li>
+    <li><a [routerLink]="['games']">Games</a></li>
+    <li><a [routerLink]="['apps']">Apps</a></li>
+    <li><a [routerLink]="['updates']">Updates</a></li>
+  </ul>
+  <div><H6>ACCOUNT</H6></div>
+  <ul class="header_list">
+    <li><a [routerLink]="['library']">Library</a></li>
+    <li><a [routerLink]="['wishlist']">Wishlist</a></li>
+    <li><a [routerLink]="['settings']">Settings</a></li>
+  </ul>
 </div>
-<div>hello</div>

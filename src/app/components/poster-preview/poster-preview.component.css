@@ -1,0 +1,6 @@
+.imagePoster{
+  width: 200px;
+}
+.imagePoster>img{
+  width: 200px;
+}

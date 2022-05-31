@@ -15,7 +15,9 @@
   background: grey;
 }
 
+
 .moviesPage{
-  width: 100%;
-  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }

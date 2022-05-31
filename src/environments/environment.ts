@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   API_token: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMTYzNWY0NTQyZmViODdjZDg5NzRhMjVlNWQxZDMyZCIsInN1YiI6IjYyOTQ4YWRjYTQ0ZDA5MDA2N2I3YTA5NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vNmIpmv0lpoDnEi7-iDk_JYXSq6rT-xvtjRwYBpBm2k',
   URL: 'https://api.themoviedb.org/3',
+  pageCount:5,
 };
 
 /*
