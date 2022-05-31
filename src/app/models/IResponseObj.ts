@@ -1,8 +1,8 @@
-import {IFilms} from "./films";
+import {IFilm} from "./IFilm";
 
 export interface IResponseObj {
   page: number,
-  results: IFilms[],
+  results: IFilm[],
   total_pages: number,
   total_results: number,
 }

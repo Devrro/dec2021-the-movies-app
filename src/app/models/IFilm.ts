@@ -1,8 +1,10 @@
-export interface IFilms {
+import {IGenres} from "./IGenres";
+
+export interface IFilm {
   id:string,
   adult: boolean,
   backdrop_path: string,
-  genre_ids: number[],
+  genres: IGenres[],
   original_language: string,
   original_title: string,
   overview: string,

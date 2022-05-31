@@ -1,1 +1,19 @@
-<p>lorem1000</p>
+<div *ngIf="movie" class="movieDetails">
+  <div class="imagePoster"><img src="https://image.tmdb.org/t/p/w200{{movie.poster_path}}" alt="poster image"></div>
+  <div class="movieInfo_container">
+    <div class="movieTitle"><h3>{{movie.title}}</h3>
+      <span class="movieId"> MOVIE ID :{{movie.id}}</span>
+    </div>
+    <div class="genre_container">
+      <h5>Genre:</h5>
+      <div class="movieGenre" *ngFor="let genre of movie.genres">
+        <h6>{{genre.name}}</h6>
+      </div>
+    </div>
+    <div> Original language : <span class="lang">{{movie.original_language}}</span></div>
+    <div>
+      Overview:
+      <p>{{movie.overview}}</p>
+    </div>
+  </div>
+</div>

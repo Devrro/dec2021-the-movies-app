@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {MoviesService} from "../../services/movies.service";
+import {IFilm} from "../../models/IFilm";
+import {MovieSetterService} from "../../services/movie-setter.service";
 
 @Component({
   selector: 'app-movie-info',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieInfoComponent implements OnInit {
 
-  constructor() { }
+  movie: IFilm;
 
-  ngOnInit(): void {
+
+  constructor(
+    private ac: ActivatedRoute,
+    private movieSetter: MovieSetterService,
+    private moviesService: MoviesService,
+  ) {
   }
 
+  ngOnInit(): void {
+    this.ac.params.subscribe(({id}) => {
+      this.moviesService.getMovieDetails(id).subscribe((movie) => {
+        this.movie = movie
+        // this.saveMovieToStorage(movie)
+      })
+    })
+  }
+  //
+  // saveMovieToStorage(movie: IFilm): void {
+  //   this.movieSetter.movieStorage.next([this.movie])
+  // }
 }

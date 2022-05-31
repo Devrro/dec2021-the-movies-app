@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IFilms} from "../../models/films";
+import {IFilm} from "../../models/IFilm";
 import {ActivatedRoute, Router} from "@angular/router";
+import {MovieSetterService} from "../../services/movie-setter.service";
 
 @Component({
   selector: 'app-movies-list-card',
@@ -10,19 +11,23 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class MoviesListCardComponent implements OnInit {
 
   @Input()
-  movie: IFilms;
+  movie: IFilm;
 
 
   constructor(
     private ac: ActivatedRoute,
-    private router:Router
-  ) { }
+
+    private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-  getDetails(filmId:string):unknown{
-    this.router.navigate([`${filmId}`], {relativeTo:this.ac}).then(()=>{})
-    return undefined
+  getDetails(filmId: string): void {
+    this.ac.queryParams.subscribe(({page}) => {
+      this.router.navigate([`${filmId}`], {relativeTo: this.ac, queryParams: {page}}).then(() => {
+      })
+    })
   }
 }

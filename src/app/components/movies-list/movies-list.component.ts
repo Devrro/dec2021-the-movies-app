@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
-import {IFilms} from "../../models/films";
+import {IFilm} from "../../models/IFilm";
 import {IResponseObj} from "../../models/IResponseObj";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -12,7 +12,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class MoviesListComponent implements OnInit {
 
   pageResponse: IResponseObj;
-  movies: IFilms[];
+  movies: IFilm[];
   pages: number[] = [];
   currentPage: number = 1;
 
@@ -48,7 +48,6 @@ export class MoviesListComponent implements OnInit {
   }
 
   getRange(start: number, end: number) {
-    console.log(Array(end - start + 1).fill(0).map((v, i) => i + start))
     return Array(end - start + 1).fill(0).map((_, i) => i + start);
   }
 
