@@ -43,8 +43,6 @@ export class MoviesListComponent implements OnInit {
 
   setPage(page: number) {
     this.route.navigate([``], {relativeTo: this.ac, queryParams: {page: page}}).then()
-    // this.currentPage = page;
-    // this.pageService.page.next(page);
   }
 
   getRange(start: number, end: number) {

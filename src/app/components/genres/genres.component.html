@@ -1,1 +1,19 @@
-<p>genres works!</p>
+<button mat-button [matMenuTriggerFor]="menu">Genres
+  <mat-menu #menu="matMenu">
+    <form [formGroup]="genresOptions">
+      <H5>Select genre(s)</H5>
+      <div class="genresStyles">
+        <mat-checkbox *ngFor="let genre of genresList" (click)="$event.stopPropagation()"
+                      formControlName="{{genre.name.toLowerCase()}}">
+          <p>{{genre.name}}</p>
+        </mat-checkbox>
+        <button (click)="saveGenresPreference()">SEARCH</button>
+
+        <section class="example-section" [formGroup]="genresOptions">
+          <h4>You chose:</h4>
+          {{genresOptions.value | json}}
+        </section>
+      </div>
+    </form>
+  </mat-menu>
+</button>

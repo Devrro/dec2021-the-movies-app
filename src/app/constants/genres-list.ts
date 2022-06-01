@@ -57,11 +57,11 @@ export const genres = [
   },
   {
     "id": 878,
-    "name": "Science Fiction"
+    "name": "ScienceFiction"
   },
   {
     "id": 10770,
-    "name": "TV Movie"
+    "name": "TVMovie"
   },
   {
     "id": 53,

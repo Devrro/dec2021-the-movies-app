@@ -5,6 +5,7 @@ import {MainPageRoutingModule} from './main-page-routing.module';
 import {MoviesService} from "../../services/movies.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MainInterceptor} from "../../main.interceptor";
+import {GenreStorageService} from "../../services/genre-storage.service";
 
 
 @NgModule({
@@ -15,11 +16,15 @@ import {MainInterceptor} from "../../main.interceptor";
     HttpClientModule,
 
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    multi: true,
-    useClass: MainInterceptor
-  }, MoviesService]
+  providers: [
+    GenreStorageService,
+    MoviesService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: MainInterceptor
+    },
+  ]
 })
 export class MainPageModule {
 }

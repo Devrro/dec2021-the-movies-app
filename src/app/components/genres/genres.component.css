@@ -1,0 +1,4 @@
+.genresStyles{
+  display: flex;
+  flex-direction: column;
+}

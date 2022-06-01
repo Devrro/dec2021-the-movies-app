@@ -15,6 +15,12 @@ import { MoviesPageComponent } from './layouts/movies-page/movies-page.component
 import { MoviesOptionsComponent } from './components/movies-options/movies-options.component';
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 import { GenresComponent } from './components/genres/genres.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GenresMenuComponent } from './components/genres-menu/genres-menu.component';
+import {MatMenuModule} from "@angular/material/menu";
+import {MatButtonModule} from "@angular/material/button";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -31,11 +37,17 @@ import { GenresComponent } from './components/genres/genres.component';
     MoviesOptionsComponent,
     HorizontalScrollDirective,
     GenresComponent,
+    GenresMenuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+
   ],
   providers: [
   ],

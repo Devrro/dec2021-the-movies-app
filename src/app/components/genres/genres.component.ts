@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {genres} from "../../constants";
+import {IGenres} from "../../models/IGenres";
+// import {GenreStorageService} from "../../services/genre-storage.service";
 
 @Component({
   selector: 'app-genres',
@@ -7,9 +11,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenresComponent implements OnInit {
 
-  constructor() { }
+  genresList: IGenres[] = genres;
+
+  genresOptions: FormGroup;
+
+  constructor(
+    fb: FormBuilder,
+    // private chosenGenreSt:GenreStorageService,
+  ) {
+    this.genresOptions = fb.group({
+      action: null,
+      adventure: null,
+      animation: null,
+      comedy: null,
+      crime: null,
+      documentary: null,
+      drama: null,
+      family: null,
+      fantasy: null,
+      history: null,
+      horror: null,
+      music: null,
+      mystery: null,
+      romance: null,
+      sciencefiction: null,
+      tvmovie: null,
+      thriller: null,
+      war: null,
+      western: null,
+    })
+  }
+
 
   ngOnInit(): void {
   }
 
+  saveGenresPreference():void {
+    const genresChosen = this.genresOptions.getRawValue()
+    let chosenGenres = []
+    for (let value of Object.keys(genresChosen)) {
+      if (genresChosen[`${value}`] === true) {
+        chosenGenres.push(...this.genresList.filter(x => x.name.toLowerCase() === value))
+
+      }
+    }
+    console.log(chosenGenres)
+  }
 }
