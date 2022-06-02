@@ -2,7 +2,6 @@
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth;
-  /*overflow-scrolling: touch;*/
   flex: 1 1 auto;
   padding: 20px 20px 40px;
   gap: 20px;
@@ -18,7 +17,6 @@
   margin: 20px;
   font-size: 15px;
   font-weight: 400;
-  color: rgba(0,0,0,50%);
 }
 .pagination{
   margin-top: 20px;
@@ -35,10 +33,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: none;
   border: 2px solid #bdbde7;
   border-radius: 5px;
 }
 .pagination>li>button:active{
- background: #bdbde7;
+
+  background: #bdbde7;
 }

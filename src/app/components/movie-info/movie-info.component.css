@@ -31,8 +31,8 @@
   border-radius: 5px;
   padding: 10px;
   background: #c7c7c7;
+  opacity: 50%;
   align-items: center;
-  /*justify-content: center;*/
   display: flex;
   gap: 10px;
 }

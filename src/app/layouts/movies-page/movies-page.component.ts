@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
+import {SwitcherControlService} from "../../services/switcher-control.service";
 
 @Component({
   selector: 'app-movies-page',
@@ -8,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private switcher:SwitcherControlService
+  ) { }
+  private isDark= false;
+
+  @HostBinding('class')
+  get themeMode(){
+    return this.isDark ? 'theme-dark' :'theme-light';
+  }
 
   ngOnInit(): void {
+    this.switcher.switcherMode.subscribe((value) => {
+      this.isDark = value
+    })
   }
 
 }

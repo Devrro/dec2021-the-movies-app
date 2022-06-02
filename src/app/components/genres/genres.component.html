@@ -8,11 +8,6 @@
           <p>{{genre.name}}</p>
         </mat-checkbox>
         <button (click)="saveGenresPreference()">SEARCH</button>
-
-        <section class="example-section" [formGroup]="genresOptions">
-          <h4>You chose:</h4>
-          {{genresOptions.value | json}}
-        </section>
       </div>
     </form>
   </mat-menu>

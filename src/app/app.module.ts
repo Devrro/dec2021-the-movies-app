@@ -21,6 +21,11 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import { CantFindComponent } from './components/cant-find/cant-find.component';
+import { MaterialSwitchComponent } from './components/material-switch/material-switch.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [
@@ -38,6 +43,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     HorizontalScrollDirective,
     GenresComponent,
     GenresMenuComponent,
+    CantFindComponent,
+    MaterialSwitchComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +54,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MatButtonModule,
     ReactiveFormsModule,
     MatCheckboxModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSlideToggleModule,
 
   ],
   providers: [

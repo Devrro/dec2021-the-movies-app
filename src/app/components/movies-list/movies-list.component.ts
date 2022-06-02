@@ -3,6 +3,7 @@ import {MoviesService} from "../../services/movies.service";
 import {IFilm} from "../../models/IFilm";
 import {IResponseObj} from "../../models/IResponseObj";
 import {ActivatedRoute, Router} from "@angular/router";
+import {GenreStorageService} from "../../services/genre-storage.service";
 
 @Component({
   selector: 'app-movies-list',
@@ -14,30 +15,41 @@ export class MoviesListComponent implements OnInit {
   pageResponse: IResponseObj;
   movies: IFilm[];
   pages: number[] = [];
-  currentPage: number = 1;
 
 
   constructor(
     private movieService: MoviesService,
     private ac: ActivatedRoute,
+    private genreStorage: GenreStorageService,
     private route: Router
   ) {
-    for (let i = this.currentPage; i < this.currentPage + 5; i++) {
-      this.pages.push(i);
-    }
+
   }
 
   ngOnInit(): void {
-    this.ac.queryParams.subscribe(({page}) => {
-        this.movieService.getPopularMovies(page).subscribe(value => {
-          this.movies = value.results
-
-          this.pages = this.pagination(parseInt(page), 500, 4)
+    this.genreStorage.genresIsSet.subscribe((value) => {
+      if (value) {
+        this.genreStorage.storage.subscribe(value => {
+          let id = value.map(x=>x.id).join(',')
+          console.log(id);
+          this.ac.queryParams.subscribe(({page}) => {
+              this.movieService.getPopularMovies(page,id).subscribe(value => {
+                this.movies = value.results
+                this.pages = this.pagination(parseInt(page), 500, 4)
+              })
+            }
+          )
         })
-
-
+      } else{
+        this.ac.queryParams.subscribe(({page}) => {
+            this.movieService.getPopularMovies(page).subscribe(value => {
+              this.movies = value.results
+              this.pages = this.pagination(parseInt(page), 500, 4)
+            })
+          }
+        )
       }
-    )
+    })
   };
 
 
@@ -71,9 +83,9 @@ export class MoviesListComponent implements OnInit {
       pages = withEndings(1, [1]).concat(pages);
     }
 
-    if (pages[pages.length - 1] < length) {
-      pages = pages.concat(withEndings(length, [length]));
-    }
+    // if (pages[pages.length - 1] < length) {
+    //   pages = pages.concat(withEndings(length, [length]));
+    // }
 
     return pages;
   }

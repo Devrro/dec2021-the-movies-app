@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {genres} from "../../constants";
 import {IGenres} from "../../models/IGenres";
-// import {GenreStorageService} from "../../services/genre-storage.service";
+import {GenreStorageService} from "../../services/genre-storage.service";
 
 @Component({
   selector: 'app-genres',
@@ -17,7 +17,7 @@ export class GenresComponent implements OnInit {
 
   constructor(
     fb: FormBuilder,
-    // private chosenGenreSt:GenreStorageService,
+    private chosenGenreSt: GenreStorageService,
   ) {
     this.genresOptions = fb.group({
       action: null,
@@ -46,15 +46,18 @@ export class GenresComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveGenresPreference():void {
+  saveGenresPreference(): void {
     const genresChosen = this.genresOptions.getRawValue()
     let chosenGenres = []
     for (let value of Object.keys(genresChosen)) {
       if (genresChosen[`${value}`] === true) {
         chosenGenres.push(...this.genresList.filter(x => x.name.toLowerCase() === value))
-
       }
     }
-    console.log(chosenGenres)
+    if (chosenGenres) {
+      this.chosenGenreSt.storage.next(chosenGenres)
+      this.chosenGenreSt.genresIsSet.next(true)
+    }else{}
+      this.chosenGenreSt.genresIsSet.next(false)
   }
 }

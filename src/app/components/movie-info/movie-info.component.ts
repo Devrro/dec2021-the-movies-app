@@ -22,13 +22,10 @@ export class MovieInfoComponent implements OnInit {
   ngOnInit(): void {
     this.ac.params.subscribe(({id}) => {
       this.moviesService.getMovieDetails(id).subscribe((movie) => {
+        console.log(movie);
         this.movie = movie
-        // this.saveMovieToStorage(movie)
       })
     })
   }
-  //
-  // saveMovieToStorage(movie: IFilm): void {
-  //   this.movieSetter.movieStorage.next([this.movie])
-  // }
+
 }
