@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { MoviesListComponent } from './components/movies-list/movies-list.component';
 import { MoviesListCardComponent } from './components/movies-list-card/movies-list-card.component';
 import { PosterPreviewComponent } from './components/poster-preview/poster-preview.component';
-import { StarsRatingComponent } from './components/stars-rating/stars-rating.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { GenreBadgeComponent } from './components/genre-badge/genre-badge.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
@@ -26,6 +25,9 @@ import { MaterialSwitchComponent } from './components/material-switch/material-s
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {BarRatingModule} from "ngx-bar-rating";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,6 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     MoviesListComponent,
     MoviesListCardComponent,
     PosterPreviewComponent,
-    StarsRatingComponent,
     MovieInfoComponent,
     GenreBadgeComponent,
     UserInfoComponent,
@@ -57,6 +58,9 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     MatToolbarModule,
     MatIconModule,
     MatSlideToggleModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    BarRatingModule,
 
   ],
   providers: [

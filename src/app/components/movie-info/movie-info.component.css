@@ -1,3 +1,5 @@
+@import '~ngx-bar-rating/themes/br-default-theme.scss';
+
 .movieDetails{
   opacity: 0;
   display: flex;

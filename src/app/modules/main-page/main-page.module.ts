@@ -6,7 +6,7 @@ import {MoviesService} from "../../services/movies.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MainInterceptor} from "../../main.interceptor";
 import {GenreStorageService} from "../../services/genre-storage.service";
-
+import {BarRatingModule} from "ngx-bar-rating";
 
 @NgModule({
   declarations: [],
@@ -14,11 +14,13 @@ import {GenreStorageService} from "../../services/genre-storage.service";
     CommonModule,
     MainPageRoutingModule,
     HttpClientModule,
+    BarRatingModule,
 
   ],
   providers: [
     GenreStorageService,
     MoviesService,
+
     {
       provide: HTTP_INTERCEPTORS,
       multi: true,

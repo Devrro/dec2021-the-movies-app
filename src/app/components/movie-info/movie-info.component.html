@@ -12,8 +12,10 @@
     </div>
     <div> Original language : <span class="lang">{{movie.original_language}}</span></div>
     <div>
+
       Overview:
       <p>{{movie.overview}}</p>
+      <bar-rating [(rate)]="rate" [max]="10"></bar-rating>
     </div>
   </div>
 </div>

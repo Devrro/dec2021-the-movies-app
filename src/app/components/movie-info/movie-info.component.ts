@@ -11,7 +11,7 @@ import {IFilm} from "../../models/IFilm";
 export class MovieInfoComponent implements OnInit {
 
   movie: IFilm;
-
+  rate: number;
 
   constructor(
     private ac: ActivatedRoute,
@@ -22,7 +22,7 @@ export class MovieInfoComponent implements OnInit {
   ngOnInit(): void {
     this.ac.params.subscribe(({id}) => {
       this.moviesService.getMovieDetails(id).subscribe((movie) => {
-        console.log(movie);
+        this.rate = movie.vote_average
         this.movie = movie
       })
     })
