@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
+@import '~font-awesome/css/font-awesome.css';
 /*noinspection ALL*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -113,6 +113,8 @@ body {
   width: 100%;
 }
 .switcher{
+  width: auto;
+  height:auto ;
   color: rgba(255, 250, 250, 0.9);
   background: none;
   display: flex;

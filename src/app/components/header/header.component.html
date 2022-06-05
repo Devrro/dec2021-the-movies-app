@@ -1,5 +1,11 @@
 <div class="header">
-  <router-outlet name="user-outlet"></router-outlet>
+
+
+  <ul class="header_list">
+    <li>
+      <app-user-info></app-user-info>
+    </li>
+  </ul>
   <div><H6>MEDIA</H6></div>
   <ul class="header_list">
     <li><a [routerLink]="['movies']" [queryParams]="{page:1}">Movies</a></li>
@@ -12,9 +18,9 @@
   </ul>
   <div><H6>ACCOUNT</H6></div>
   <ul class="header_list">
-    <li><a [routerLink]="['library']">Library</a></li>
-    <li><a [routerLink]="['wishlist']">Wishlist</a></li>
-    <li><a [routerLink]="['settings']">Settings</a></li>
+    <li><a [routerLink]="['userPage']">User profile</a></li>
+    <li>
+      <app-material-switch></app-material-switch>
+    </li>
   </ul>
-  <app-material-switch></app-material-switch>
 </div>
