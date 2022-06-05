@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { HeaderComponent } from './components/header/header.component';
@@ -14,7 +13,6 @@ import { MoviesOptionsComponent } from './components/movies-options/movies-optio
 import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 import { GenresComponent } from './components/genres/genres.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GenresMenuComponent } from './components/genres-menu/genres-menu.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
@@ -26,7 +24,9 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {BarRatingModule} from "ngx-bar-rating";
+import { BarRatingModule } from "ngx-bar-rating";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -41,9 +41,9 @@ import {BarRatingModule} from "ngx-bar-rating";
     MoviesOptionsComponent,
     HorizontalScrollDirective,
     GenresComponent,
-    GenresMenuComponent,
     CantFindComponent,
     MaterialSwitchComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,6 +59,8 @@ import {BarRatingModule} from "ngx-bar-rating";
     MatTooltipModule,
     MatFormFieldModule,
     BarRatingModule,
+    FontAwesomeModule,
+
 
   ],
   providers: [
