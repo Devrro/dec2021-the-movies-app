@@ -10,5 +10,6 @@ export class HorizontalScrollDirective {
   @HostListener('wheel', ['$event'])
   public onScroll(event: WheelEvent) {
     this.element.nativeElement.scrollLeft += (event.deltaY*3);
+    this.element.nativeElement.scroll = 0;
   }
 }

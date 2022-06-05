@@ -1,4 +1,23 @@
+.genresForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .genresStyles{
   display: flex;
   flex-direction: column;
+  padding: 20px;
+}
+.genreButton{
+  margin-top: 20px;
+  width: auto;
+  border: none;
+  background-color: #d2d2d2;
+
+  height: 40px;
+}
+.genreButton:active{
+  background-color: #8c8c8c;
+
 }

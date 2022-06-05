@@ -18,6 +18,7 @@ export class GenresComponent implements OnInit {
   constructor(
     fb: FormBuilder,
     private chosenGenreSt: GenreStorageService,
+    private genreStorage:GenreStorageService,
   ) {
     this.genresOptions = fb.group({
       action: null,
@@ -44,6 +45,12 @@ export class GenresComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.genreStorage.genreListStorage.subscribe((value)=>{
+      for(let val of value){
+        val.name = val.name.replace(/\s/g, '')
+      }
+      this.genresList = value
+    })
   }
 
   saveGenresPreference(): void {
@@ -55,9 +62,11 @@ export class GenresComponent implements OnInit {
       }
     }
     if (chosenGenres) {
-      this.chosenGenreSt.storage.next(chosenGenres)
+      this.chosenGenreSt.storageIds.next(chosenGenres)
       this.chosenGenreSt.genresIsSet.next(true)
-    }else{}
+    }else{
+      this.chosenGenreSt.storageIds.next(chosenGenres)
       this.chosenGenreSt.genresIsSet.next(false)
+    }
   }
 }

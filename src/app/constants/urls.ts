@@ -6,5 +6,5 @@ export const urls ={
   popMovies:`${URL}/movie/popular`,
   discoverMovies:`${URL}/discover/movie`,
   movieID:`${URL}/movie/`,
-  genre:`${URL}/movies/genre`
+  genre:`${URL}/genre/movie/list`
 }

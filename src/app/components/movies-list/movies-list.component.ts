@@ -15,7 +15,9 @@ export class MoviesListComponent implements OnInit {
   pageResponse: IResponseObj;
   movies: IFilm[];
   pages: number[] = [];
-
+  moviesExist: boolean = false
+  delta: number = 4
+  id: string = ''
 
   constructor(
     private movieService: MoviesService,
@@ -29,26 +31,20 @@ export class MoviesListComponent implements OnInit {
   ngOnInit(): void {
     this.genreStorage.genresIsSet.subscribe((value) => {
       if (value) {
-        this.genreStorage.storage.subscribe(value => {
-          let id = value.map(x=>x.id).join(',')
-          console.log(id);
-          this.ac.queryParams.subscribe(({page}) => {
-              this.movieService.getPopularMovies(page,id).subscribe(value => {
-                this.movies = value.results
-                this.pages = this.pagination(parseInt(page), 500, 4)
-              })
-            }
-          )
+        this.genreStorage.storageIds.subscribe(value => {
+          this.id = value.map(x => x.id).join(',')
         })
-      } else{
-        this.ac.queryParams.subscribe(({page}) => {
-            this.movieService.getPopularMovies(page).subscribe(value => {
-              this.movies = value.results
-              this.pages = this.pagination(parseInt(page), 500, 4)
-            })
-          }
-        )
       }
+      this.ac.queryParams.subscribe(({page}) => {
+        this.movieService.getPopularMovies(page, this.id).subscribe(value => {
+          this.movies = value.results
+          let pageCount = Math.min(value.total_pages, 500)
+          if (value.total_pages < this.delta) {
+            this.delta = value.total_pages
+          }
+          this.pages = this.pagination(parseInt(page), pageCount, this.delta)
+        })
+      })
     })
   };
 
@@ -62,6 +58,9 @@ export class MoviesListComponent implements OnInit {
   }
 
   pagination(current: number, length: number, delta: number = 4) {
+    if (delta == length) {
+      return []
+    }
     const range = {
       start: Math.round(current - delta / 2),
       end: Math.round(current + delta / 2)
@@ -82,10 +81,6 @@ export class MoviesListComponent implements OnInit {
     if (pages[0] !== 1) {
       pages = withEndings(1, [1]).concat(pages);
     }
-
-    // if (pages[pages.length - 1] < length) {
-    //   pages = pages.concat(withEndings(length, [length]));
-    // }
 
     return pages;
   }
