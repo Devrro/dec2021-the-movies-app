@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {MoviesService} from "../../services/movies.service";
 import {IFilm} from "../../models/IFilm";
-import{faStar} from "@fortawesome/free-solid-svg-icons";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-movie-info',
@@ -14,7 +14,7 @@ export class MovieInfoComponent implements OnInit {
   faStar = faStar;
 
   movie: IFilm;
-    rate: number;
+  rate: number;
 
   constructor(
     private ac: ActivatedRoute,
@@ -27,6 +27,7 @@ export class MovieInfoComponent implements OnInit {
       this.moviesService.getMovieDetails(id).subscribe((movie) => {
         this.rate = movie.vote_average
         this.movie = movie
+        console.log(this.movie)
       })
     })
   }
