@@ -64,7 +64,9 @@ export class GenresComponent implements OnInit {
     if (chosenGenres) {
       this.chosenGenreSt.storageIds.next(chosenGenres)
       this.chosenGenreSt.genresIsSet.next(true)
-    }else{}
+    }else{
+      this.chosenGenreSt.storageIds.next(chosenGenres)
       this.chosenGenreSt.genresIsSet.next(false)
+    }
   }
 }

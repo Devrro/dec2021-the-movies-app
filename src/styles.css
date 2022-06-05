@@ -59,7 +59,7 @@ table {
 
 :root {
   --white: snow;
-  --black: #340808;
+  --black: #343434;
   --fontColor: var(--white);
   --fontColor2: var(--black);
   --background_colorW: white;
@@ -88,7 +88,7 @@ body {
 
 .theme-dark{
   background-color: var(--black);
-  color: #868ec7;
+  color: #eeeeee;
   transition: 0.1s;
 }
 .theme-light {
@@ -120,3 +120,4 @@ body {
   display: flex;
   gap: 20px;
 }
+
