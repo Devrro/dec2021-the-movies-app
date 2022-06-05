@@ -26,6 +26,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { BarRatingModule } from "ngx-bar-rating";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {CarouselModule} from "primeng/carousel";
 
 
 @NgModule({
@@ -45,24 +46,25 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MaterialSwitchComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatMenuModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    MatCheckboxModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSlideToggleModule,
-    MatTooltipModule,
-    MatFormFieldModule,
-    BarRatingModule,
-    FontAwesomeModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatMenuModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatCheckboxModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatSlideToggleModule,
+        MatTooltipModule,
+        MatFormFieldModule,
+        BarRatingModule,
+        FontAwesomeModule,
+        CarouselModule,
 
 
-  ],
+    ],
   providers: [
   ],
   bootstrap: [AppComponent],

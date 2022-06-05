@@ -1,8 +1,22 @@
 <div class="page">
   <div class="title"><h3>You may like it</h3></div>
   <div class="moviesList" appHorizontalScroll>
-    <app-movies-list-card *ngFor="let movie of movies" [movie]="movie"></app-movies-list-card>
+    <p-carousel appHorizontalScroll [value]="movies"
+                [showIndicators]=false
+                [showNavigators]=true
+                [numScroll]="5"
+                [numVisible]="5"
+                [circular]=true
+    >
+
+      <ng-template let-movie pTemplate="item">
+        <app-movies-list-card [movie]="movie"></app-movies-list-card>
+      </ng-template>
+    </p-carousel>
   </div>
+  <!--  <div class="moviesList" appHorizontalScroll>-->
+  <!--    <app-movies-list-card *ngFor="let movie of movies" [movie]="movie"></app-movies-list-card>-->
+  <!--  </div>-->
   <ul class="pagination">
     <li *ngFor="let page of pages">
       <button (click)="setPage(page)">{{page}}</button>

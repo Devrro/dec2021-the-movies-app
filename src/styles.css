@@ -73,7 +73,21 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+.p-carousel-next,
+.p-carousel-prev{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 50%);
+  background-image: url("/assets/images/icons8-reply-arrow-100.png");
+  background-repeat: no-repeat;
+  background-size: 40px;
+  opacity: 50%
+}
+.p-carousel-next{
+  transform: scaleX(-1);
+}
 .container {
   margin: 20px;
   background: rgba(255, 255, 255, 10%);
@@ -87,18 +101,18 @@ body {
   overflow: hidden;
 }
 
-.theme-dark{
+.theme-dark {
   background-color: var(--black);
   color: #eeeeee;
   transition: 0.1s;
 }
+
 .theme-light {
   background-color: var(--white);
   color: var(--black);
   transition: 0.1s;
 }
-.moviesPage_container {
-}
+
 
 .popular_movies_page {
   width: 100%;
@@ -113,9 +127,10 @@ body {
   overflow: auto;
   width: 100%;
 }
-.switcher{
+
+.switcher {
   width: auto;
-  height:auto ;
+  height: auto;
   color: rgba(255, 250, 250, 0.9);
   background: none;
   display: flex;

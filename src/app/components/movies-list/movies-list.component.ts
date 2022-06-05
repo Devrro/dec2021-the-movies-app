@@ -11,7 +11,6 @@ import {GenreStorageService} from "../../services/genre-storage.service";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-
   pageResponse: IResponseObj;
   movies: IFilm[];
   pages: number[] = [];
