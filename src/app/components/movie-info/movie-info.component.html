@@ -12,10 +12,20 @@
     </div>
     <div> Original language : <span class="lang">{{movie.original_language}}</span></div>
     <div>
-
       Overview:
       <p>{{movie.overview}}</p>
-      <bar-rating [(rate)]="rate" [max]="10"></bar-rating>
     </div>
+    <h5>
+      <span class="rating "> Rating:{{movie.vote_average}}/10</span>
+    </h5>
+    <bar-rating [rate]="rate" [readOnly]="true" [max]="10">
+      <ng-template ratingInactive>
+        <fa-icon [icon]="faStar" [fixedWidth]="true" size="lg" style="color: #d2d2d2"></fa-icon>
+      </ng-template>
+      <ng-template ratingActive>
+        <fa-icon [icon]="faStar" [fixedWidth]="true" size="lg" style="color: #e8df35"></fa-icon>
+      </ng-template>
+    </bar-rating>
   </div>
 </div>
+

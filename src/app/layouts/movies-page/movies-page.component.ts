@@ -1,5 +1,6 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
 import {SwitcherControlService} from "../../services/switcher-control.service";
+import {GenreStorageService} from "../../services/genre-storage.service";
 
 @Component({
   selector: 'app-movies-page',
@@ -10,6 +11,7 @@ import {SwitcherControlService} from "../../services/switcher-control.service";
 export class MoviesPageComponent implements OnInit {
 
   constructor(
+    private genreStorage: GenreStorageService,
     private switcher:SwitcherControlService
   ) { }
   private isDark= false;
@@ -22,6 +24,9 @@ export class MoviesPageComponent implements OnInit {
   ngOnInit(): void {
     this.switcher.switcherMode.subscribe((value) => {
       this.isDark = value
+    })
+    this.genreStorage.getGenres().subscribe((value) => {
+      this.genreStorage.genreListStorage.next(value.genres)
     })
   }
 
