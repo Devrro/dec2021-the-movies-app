@@ -10,7 +10,6 @@ import { MovieInfoComponent } from './components/movie-info/movie-info.component
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { MoviesPageComponent } from './layouts/movies-page/movies-page.component';
 import { MoviesOptionsComponent } from './components/movies-options/movies-options.component';
-import { HorizontalScrollDirective } from './directives/horizontal-scroll.directive';
 import { GenresComponent } from './components/genres/genres.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
@@ -40,7 +39,6 @@ import {CarouselModule} from "primeng/carousel";
     UserInfoComponent,
     MoviesPageComponent,
     MoviesOptionsComponent,
-    HorizontalScrollDirective,
     GenresComponent,
     CantFindComponent,
     MaterialSwitchComponent,
