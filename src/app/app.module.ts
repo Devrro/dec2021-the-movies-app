@@ -8,7 +8,6 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { MoviesListCardComponent } from './components/movies-list-card/movies-list-card.component';
 import { PosterPreviewComponent } from './components/poster-preview/poster-preview.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
-import { GenreBadgeComponent } from './components/genre-badge/genre-badge.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { MoviesPageComponent } from './layouts/movies-page/movies-page.component';
 import { MoviesOptionsComponent } from './components/movies-options/movies-options.component';
@@ -37,7 +36,6 @@ import {BarRatingModule} from "ngx-bar-rating";
     MoviesListCardComponent,
     PosterPreviewComponent,
     MovieInfoComponent,
-    GenreBadgeComponent,
     UserInfoComponent,
     MoviesPageComponent,
     MoviesOptionsComponent,
